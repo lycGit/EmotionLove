@@ -1,0 +1,30 @@
+.buy_row{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   border-radius: 20rpx;
+   background-color: rgb(250, 242, 228);
+   margin-top: 20rpx;
+   height: 104rpx;
+   align-items: center;
+}
+.buy_row .left{
+    display: flex;
+    flex-direction: row;
+   
+    justify-content: space-between;
+    font-size: 36rpx;
+}
+.buy_row .title{
+    color: black;
+    margin-right: 50rpx;
+    margin-left: 30rpx;
+}
+.buy_row .price{
+    color: rgb(230, 203, 140);
+    margin-right: 50rpx;
+}
+.buy_row .oldprice{
+    color: rgb(230, 203, 140);
+    text-decoration: line-through;
+}

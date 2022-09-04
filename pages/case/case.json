@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "case-item": "/cmps/case-item/case-item"
+  }
+  
+}

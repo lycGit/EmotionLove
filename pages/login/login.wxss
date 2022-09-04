@@ -1,0 +1,118 @@
+/* pages/login/login.wxss */
+page{
+    height: 100%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.container .above {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container .below {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    /* background-color: yellow; */
+}
+
+.container .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #488ef2;
+    width: 100%;
+}
+.container .header .logo {
+   width: 144rpx; 
+   height: 144rpx;
+   margin: 30rpx 0rpx;
+}
+.container .header .wechat-login {
+    background-color: #fff;
+    color: #42bd55;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 50%;
+    text-align: center;
+    border-radius: 10rpx;
+    border: 2rpx solid #42bd55;
+    margin: 30rpx 0;
+}
+.container .notice{
+    display: flex;
+    height: 64rpx;
+    font-size: 28rpx;
+    justify-content: start;
+    align-items: center;
+    background-color: #f7f2d7;
+    color: #e1ae63;
+
+}
+.container .notice_logo{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+    margin-left: 20rpx;
+ }
+.container .item-for {
+    width: 100%;
+}
+.container .item{
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100rpx;
+}
+.container .row-image {
+   width: 44rpx;
+   height: 44rpx;
+   margin-right: 20rpx;
+}
+.container .left {
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+}
+.container .discribe {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+}
+.container .arrow{
+    width: 20rpx;
+    height: 20rpx;
+    border: 4rpx solid #7f7f7f;
+    border-left: none;
+    border-top: none;
+    transform: rotate(-45deg);
+    margin-left: 10rpx;
+
+}
+.container .divider{
+    width: 100%;
+    height: 2rpx;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.container .agreement {
+   color: #9d9d9d;
+   font-size: 24rpx;
+   display: flex;
+   margin-top: 30rpx;
+   margin-bottom: 30rpx;
+}
+
+.container .agreement .secret {
+    margin: 0 10rpx;
+    color: #4bb65c;
+}

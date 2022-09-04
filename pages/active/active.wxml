@@ -1,0 +1,11 @@
+<!--pages/active/active.wxml-->
+<view class="active" >
+    <button class="show-btn" bind:tap="showDialog" >
+        弹窗
+    </button>
+    <!-- <view  class="model-mask" 
+    bind:tap="hideDialog"
+     catchtouchmove="preventTouchMove"
+     wx:if="{{showModel}}"> </view> -->
+    <contact-alert id = 'alert' class="contact_alert"></contact-alert>
+</view>

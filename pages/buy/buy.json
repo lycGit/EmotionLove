@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "buy-item": "/cmps/buy-item/buy-item"
+  }
+  
+}

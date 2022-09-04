@@ -1,0 +1,17 @@
+<view  class="buy_row" >
+    <view class="left" >
+         <view class="title" >
+            {{entity.name}}
+        </view>
+        <view class="price" >
+            {{entity.price}}
+        </view>
+        <view class="oldprice" >
+            {{entity.oldprice}}
+        </view>   
+    </view>
+    <view class="right" >
+        
+    </view>
+
+</view>

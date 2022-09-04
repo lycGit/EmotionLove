@@ -1,0 +1,30 @@
+        <view  class="row" >
+            <view class="title" >
+                {{entity.title}}
+            </view>
+            <view class="images" >
+                <view wx:for="{{skill_item_images}}" class="image_wrapper" >
+                     <image class="skill_image" src= "{{item.imageSrc}}" />
+                </view>
+                 <view wx:if="{{skill_item_images.length % 3 > 0}}" class="image_wrapper_hide" >
+                    
+                </view>
+                <view wx:if="{{skill_item_images.length % 3 == 1}}" class="image_wrapper_hide" >
+                    
+                </view>
+            </view>
+            <view class="bottom" >
+                <view class="date" >
+                    <image class="bottom_logo" src="/pages/assets/imgs/ic_cat_music.png" />
+                    {{entity.date}}
+                    
+                </view>
+                <view class="like">
+                    <image class="bottom_logo" src="/pages/assets/imgs/ic_cat_music.png" />
+                    {{entity.like}}
+                </view>
+            </view>
+            <view class="underline" >
+                
+            </view>
+        </view>

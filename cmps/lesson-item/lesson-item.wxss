@@ -1,0 +1,41 @@
+/* cmps/lesson-item/lesson-item.wxss */
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 20rpx;
+    border: 2rpx solid gray;
+    border-radius: 10rpx;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+}
+/* .row .left{
+
+} */
+
+.row .lesson_image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.row .right{
+    display: flex;
+    flex-direction: column;
+}
+.row .above{
+    font-size: 28rpx;
+}
+.row .middle{
+    margin-top: 15rpx;
+    margin-bottom: 15rpx;
+    font-size: 24rpx; 
+}
+.row .below{
+    display: flex;
+    flex-direction: row;
+    font-size: 20rpx; 
+}
+.row .line{
+    margin-left: 5rpx;
+    margin-right: 5rpx;
+}

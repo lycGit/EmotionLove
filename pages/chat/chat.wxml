@@ -1,0 +1,43 @@
+<!--pages/chat/chat.wxml-->
+<view class="container" >
+    <view wx:for="{{3}}" class="cell" >
+        <view class="content" >
+            <view wx:if="{{1}}" class="row-left" >
+                <view class="left-header" >
+                     <image class="header_logo" src="/pages/assets/imgs/female.jpeg" />
+                </view>
+                <view class="left-words-bg">
+                    你好你好你好你好你好你好你好你好你好你好你好你好你好
+                </view>
+                 <view class="copy-btn">
+                    <image class="copy_btn_image" src="/pages/assets/imgs/ic_cat_music.png" />
+                </view>
+            </view>
+            <view wx:if="{{1}}" class="row-right" >
+                <view class="right-header" >
+                     <image class="tail_logo" src="/pages/assets/imgs/male.jpeg" />
+                </view>
+                <view class="right-words-bg">
+                    开开详细寻寻寻心开开详细寻寻寻心开开详细寻寻寻心开开详细寻寻寻心开开详细寻寻寻心
+                </view>
+                 <view class="copy-btn">
+                     <image class="copy_btn_image" src="/pages/assets/imgs/ic_cat_music.png" />
+                </view>
+            </view>
+            <view wx:if="{{1}}" class="row-right" >
+                <view class="right-header" >
+                     <image class="tail_logo" src="/pages/assets/imgs/male.jpeg" />
+                </view>
+                <view class="right-words-bg">
+                    开开详细寻寻寻心开开详细寻寻寻心接口后悔何及UI就可能会考虑了明年寻寻心
+                </view>
+                 <view class="copy-btn">
+                     <image class="copy_btn_image" src="/pages/assets/imgs/ic_cat_music.png" />
+                </view>
+            </view>
+            <view class="gray-bar">
+                
+            </view>
+        </view>
+    </view>
+</view>

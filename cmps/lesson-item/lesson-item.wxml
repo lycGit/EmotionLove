@@ -1,0 +1,25 @@
+<view class="row">
+    <view class="left" >
+         <image class="lesson_image" src="/pages/assets/imgs/gantanhao.png" />
+    </view>
+    <view class="right" >
+        <view class="above" >
+            {{entity.title}}
+        </view>
+        <view class="middle">
+           客服微信：{{entity.contact}} 
+        </view>
+        <view class="below" >
+            <view class="lesson" >
+               {{entity.count}}讲
+            </view>
+            <view class="line" >
+                
+            </view>
+            <view class="students" >
+                {{entity.students}}人听过
+            </view>
+            
+        </view>
+    </view>
+</view>

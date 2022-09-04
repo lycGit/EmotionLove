@@ -1,0 +1,66 @@
+/* cmps/contact-alert/contact-alert.wxss */
+.alert{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+}
+.alert .alert_view{
+    width: 600rpx;
+    background-color: yellow;
+
+}
+.alert .above{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.alert .empty{
+    width: 100rpx;
+    height: 100rpx; 
+}
+.alert .close_btn{
+    width: 100rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row-reverse; 
+}
+.alert .close_logo{
+    width: 80rpx;
+    height: 80rpx;
+    position: relative;
+}
+.alert .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.alert .alert_image{
+    display: flex;
+    justify-content: center;
+    background-color: greenyellow;
+}
+.alert .alert_logo{
+    width: 150rpx;
+    height: 150rpx;
+}
+.alert .message{
+    font-size: 24rpx;
+    margin: 30rpx;
+}
+
+.alert .copy_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    height: 64rpx;
+    width: 400rpx;
+    margin-bottom: 30rpx;
+}

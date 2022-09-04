@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "skill-item": "/cmps/skill-item/skill-item"
+  }
+}

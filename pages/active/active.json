@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "contact-alert": "/cmps/contact-alert/contact-alert"
+  }
+}

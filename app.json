@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/active/active",
+    "pages/login/login",
+    "pages/lesson/lesson",
+    "pages/skill/skill",
+    "pages/case/case",
+    "pages/chat/chat",
+    "pages/buy/buy",
+    "pages/webview/webview"
+
+  ],
+  "tabBar": {
+    "color": "#AAAAAA",
+    "selectedColor": "#56B465",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "恋爱话术",
+        "iconPath": "/pages/assets/imgs/liaotianhuashu.png",
+        "selectedIconPath": "/pages/assets/imgs/liaotianhuashu.png"
+      },
+      {
+        "pagePath": "pages/case/case",
+        "text": "聊天案例",
+        "iconPath": "/pages/assets/imgs/chatcase.png",
+        "selectedIconPath": "/pages/assets/imgs/chatcase.png"
+      },
+      {
+        "pagePath": "pages/skill/skill",
+        "text": "恋爱技巧",
+        "iconPath": "/pages/assets/imgs/qinggandaxue.png",
+        "selectedIconPath": "/pages/assets/imgs/qinggandaxue.png"
+      },
+      {
+        "pagePath": "pages/lesson/lesson",
+        "text": "系统课程",
+        "iconPath": "/pages/assets/imgs/lesson.png",
+        "selectedIconPath": "/pages/assets/imgs/lesson.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "个人中心",
+        "iconPath": "/pages/assets/imgs/gerenzhongxin.png",
+        "selectedIconPath": "/pages/assets/imgs/gerenzhongxin.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#488ef2",
+    "navigationBarTitleText": "情感话术",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "contact-alert": "/cmps/contact-alert/contact-alert"
+  }
+}

@@ -1,0 +1,26 @@
+<view class="alert" wx:if="{{showModel}}">
+    <view class="alert_view" >
+
+        <view class="content" >
+            <view class="above" >
+                <view class="empty" >
+                    
+                </view>
+                <view class="alert_image" >
+                    <image class="alert_logo" src="/pages/assets/imgs/ic_cat_music.png" />
+                </view>   
+                <view class="close_btn" bind:tap="hideDialog">
+                    <image class="close_logo" src="/pages/assets/imgs/ic_cat_music.png" />
+                </view> 
+            </view>
+
+            <view class="message" >
+                友情提示：程序开发需要维护成本，如您需要请添加老司机微信，购买激活码即可使用
+            </view>
+            <view class="copy_btn" >
+                复制导师微信号 1234578988766
+            </view>
+        </view>
+    </view>
+
+</view>

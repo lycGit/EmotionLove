@@ -1,0 +1,140 @@
+<!--pages/home/home.wxml-->
+<view class="container" >
+    <view class="scroller" >
+        <!-- <view wx:for="{{3}}" class="scroll_item">
+            <image class="photo" src="/pages/assets/imgs/tuodanshenqi.png" />
+        </view> -->
+        <view class="scroll_item">
+            <image class="photo" src="/pages/assets/imgs/tuodanshenqi.png" mode="aspectFill"/>
+            <image class="photo" src="/pages/assets/imgs/yidilian.jpeg" mode="aspectFill"/>
+        </view>
+          
+    </view>
+      
+    <view class="notice" >
+         <image class="notice_logo" src="/pages/assets/imgs/huo.png" />
+          话术库已经完成升级，新增海量话术！
+    </view>
+    <view class="search" >
+         <view class="search-wrapper" >
+             <view class="search_word" hover-class="none" hover-stop-propagation="false">
+                   <image class="search-logo" src="/pages/assets/imgs/ic_search.png" />
+                    输入TA说的话    
+             </view>
+             <view class="search_btn" bindtap="refresh" >
+                   查找
+             </view>
+         </view>
+         <view class="search_hint">
+             <view class="left_hint" >
+                 开通授权方可搜到话术
+             </view>
+             <view class="right_hint">
+                 今日话术已更新
+             </view>
+         </view>
+
+    </view> 
+    <view class="emotion_source">
+        <!-- <view wx:for="{{4}}" class="source_item" >
+             <image class="source_logo" src="/pages/assets/imgs/ic_cat_music.png" />
+             展示页面素材
+        </view> -->
+        <view  class="source_item" >
+            <image class="source_logo" src="/pages/assets/imgs/yemiansucai.png" />
+            展示面素材
+        </view>
+        <view  class="source_item" >
+            <image class="source_logo" src="/pages/assets/imgs/biaoqingbao.png" />
+            表情包
+        </view>
+        <view  class="source_item" >
+            <image class="source_logo" src="/pages/assets/imgs/jihuoma.png" />
+            授权激活码
+        </view>
+        <view  class="source_item" >
+            <image class="source_logo" src="/pages/assets/imgs/AI.png" />
+            AI伴聊
+        </view>
+    </view>
+    <view class="source_gray_bar" >
+        
+    </view>
+    <view class="change_bar" >
+        <view class="title" >
+             大家都在搜
+        </view>
+        <view class="change_btn" >
+             换一批
+        </view>
+    </view>
+    <view class="search_always" > 
+            <view wx:for="{{all_search_topics}}"  >
+                <view class="search_item" >
+                    <image class="search_item_logo" src="/pages/assets/imgs/huo.png" />
+                    {{item}}
+                </view>
+            </view>
+            <view wx:if="{{all_search_topics.length % 3 > 0}}" class="search_item_hide" >
+                
+            </view>
+            <view wx:if="{{all_search_topics.length % 3 == 1}}" class="search_item_hide" >
+                
+            </view>
+    </view>
+    <view class="top_topic" >
+        <view class="left" >
+            <image class="left_search_item_logo" src="/pages/assets/imgs/kaichangbai.jpeg" />
+        </view>
+        <view class="right" >
+             <view class="above">
+                 <image class="right_search_item_logo" src="/pages/assets/imgs/chuliaohudong.jpeg" />
+             </view> 
+             <view class="blow" >
+                 <image class="right_search_item_logo" src="/pages/assets/imgs/jianliqinggan.jpeg" />
+             </view>  
+        </view>
+    </view>
+
+
+    <view class="all_topics" >
+        <view wx:for="{{ all_topics }}" class="topics">
+            <view class="topic_bar" >
+                <image class="topic_logo" src="/pages/assets/imgs/topic_logo.jpeg" />
+                {{item.title}}
+            </view>
+            <view class="topic_items" >
+ 
+                <view wx:for="{{item.topics}}" wx:for-index="topic_index" wx:for-item="topic_content"  class="topic_item" bind:tap="showChatView">
+                    {{topic_content}}
+                </view>
+                <view wx:if="{{item.topics.length % 3 > 0}}" class="topic_item_hide" >
+                    
+                </view>
+                <view wx:if="{{item.topics.length % 3 == 1}}" class="topic_item_hide" >
+                    
+                </view>
+                    
+             </view>
+        </view>
+        
+    </view>
+    <view class="case_bar" >
+        <view class="left" >
+             <image class="case_logo" src="/pages/assets/imgs/huo2.png" />
+              聊天案例   
+        </view>
+        <view class="right" >
+              更多
+        </view>
+
+    </view>
+    <view class="all_cases" >
+        <case-item  wx:for="{{all_cases}}"
+             entity = "{{item}}" bind:tap="showWebView">
+        </case-item>
+    </view>
+
+
+</view>
+

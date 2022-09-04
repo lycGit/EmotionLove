@@ -1,0 +1,7 @@
+<view class="container" >
+    <view class="items" >
+        <lesson-item wx:for="{{all_lesson_cases}}" class="row" entity = "{{item}}">
+        </lesson-item>
+    </view>
+    
+</view>

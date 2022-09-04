@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="notice">
+        <image src="/pages/assets/imgs/topic_logo.jpeg" mode="widthFix"></image>
+        <view class="notice_desc">
+            <view style="transform: translateX(-{{ distance }}px);">
+            <text style="margin-right:{{ space }}px;"></text>
+            <text id="mjltest">{{ text }}</text>
+            <text style="margin-right:{{ space }}px;"></text>
+            <text>{{ text }}</text>
+            </view>
+        </view>
+   </view>
+    <view class="above" >
+        <view class="header" >
+            <image class="logo" src="/pages/assets/imgs/buyvip.png" mode="aspectFit"/>
+        </view>
+    </view>
+    <view class="title" >
+            VIP套餐
+    </view>
+    <view class="hint" >
+            一杯咖啡钱，换来一堆女朋友！！！ 赶快加微信“”购买激活码吧。
+    </view>
+    <view class="blow" >
+         <buy-item wx:for="{{pricesArray}}" class="row" entity = "{{item}}">
+        </buy-item>
+    </view>
+
+</view>
