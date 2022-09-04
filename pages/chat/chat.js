@@ -5,14 +5,57 @@ Page({
    * 页面的初始数据
    */
   data: {
+    all_chats: []
+  },
 
+  loadChatData: function(category){
+     var that = this;
+      wx.request({
+         url: "https://www.qgsq.space/speakskill/chatdetail",
+         data: {'categary': category},
+         method: 'POST',
+         header: {
+          // 'Content-Type': 'application/json'
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+         success: function(res){
+          console.log('loadChatData'); 
+          //  console.log(res); 
+           var topicArr = []
+           for (const index in res.data) {
+              var jsonStr = res.data[index];
+              jsonStr = jsonStr.replace(" ","");
+              if(typeof jsonStr!= 'object'){
+                jsonStr= jsonStr.replace(/\ufeff/g,"");//重点
+                var jsonObj = JSON.parse(jsonStr);
+                // jsonObj.sex = parseInt(jsonObj.sex)
+                topicArr.push(jsonObj);
+              }
+           }
+           console.log(topicArr); 
+           
+           that.setData({
+            all_chats : topicArr
+           });
+      
+         },
+         fail: function(){xe
+           console.log(xe);
+         }
+   
+       })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.categroy)
+    this.loadChatData(options.categroy)
+    // this.setData({
+    //   categroy : options.categroy
 
+    // })
   },
 
   /**
@@ -26,7 +69,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log('chat on show'); 
+    // console.log(categroy); 
   },
 
   /**

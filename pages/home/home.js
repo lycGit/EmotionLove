@@ -1,8 +1,10 @@
 // pages/home/home.js
 Page({
-   showChatView: function() {
+   showChatView: function(e) {
+      // console.log(e.currentTarget.dataset.category)
+      let categroy = e.currentTarget.dataset.category;
       wx.navigateTo({
-        url: '/pages/chat/chat',
+        url: '/pages/chat/chat?categroy=' + categroy,
         success: (result)=>{
           
         },
@@ -19,6 +21,37 @@ Page({
         fail: ()=>{},
         complete: ()=>{}
       });
+    },
+    searchChatSkill: function(){
+      var that = this;
+      wx.request({
+         url: "https://www.qgsq.space/speakskill/talkskill",
+         data: {},
+         method: 'GET',
+         header: {'Content-Type': 'application/json'},
+         success: function(res){
+            //  console.log(res); 
+           var topicArr = []
+           for (const index in res.data) {
+              let item = res.data[index];
+              let title = item.title;
+              let topics = item.childs;
+              let itemDic = {'title': title, 'topics': topics}; 
+            
+            topicArr.push(itemDic);
+           }
+         //   console.log(topicArr)
+           
+           that.setData({
+            all_topics : topicArr
+           });
+      
+         },
+         fail: function(){xe
+           console.log(xe);
+         }
+   
+       })
     },
   /**
    * 页面的初始数据
@@ -83,35 +116,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     var reqTask = wx.request({
-        url: 'http://106.14.121.13/idlist',
-        data: {},
-        header: {'content-type':'application/json'},
-        method: 'GET',
-        dataType: 'json',
-        responseType: 'text',
-        success: (result)=>{
-          print(result)
-        },
-        fail: ()=>{},
-        complete: ()=>{}
-      });
+      this.searchChatSkill();
   },
 
-  refresh: function (evt) {
-   var reqTask = wx.request({
-      url: 'http://106.14.121.13/idlist',
-      data: {},
-      header: {'content-type':'application/json'},
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
-      success: (result)=>{
-        console.log(result.data)
-      },
-      fail: ()=>{},
-      complete: ()=>{}
-    });
-}
+
 
 })
