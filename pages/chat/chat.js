@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentPage: 1,
+    pageSize: 10,
+    categroy: '',
     all_chats: []
   },
 
@@ -12,15 +15,16 @@ Page({
      var that = this;
       wx.request({
          url: "https://www.qgsq.space/speakskill/chatdetail",
-         data: {'categary': category},
+         data: {
+          'categary': category,
+          'pageNO': that.data.currentPage.toString(),
+          'pageSize': that.data.pageSize.toString(),
+           },
          method: 'POST',
          header: {
-          // 'Content-Type': 'application/json'
           "Content-Type": "application/x-www-form-urlencoded"
         },
          success: function(res){
-          console.log('loadChatData'); 
-          //  console.log(res); 
            var topicArr = []
            for (const index in res.data) {
               var jsonStr = res.data[index];
@@ -35,7 +39,7 @@ Page({
            console.log(topicArr); 
            
            that.setData({
-            all_chats : topicArr
+            all_chats : that.data.all_chats.concat(topicArr) 
            });
       
          },
@@ -51,6 +55,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options.categroy)
+    this.data.categary = options.categroy
     this.loadChatData(options.categroy)
     // this.setData({
     //   categroy : options.categroy
@@ -99,6 +104,11 @@ Page({
    */
   onReachBottom: function () {
 
+    // 页码+1
+    this.data.currentPage++;
+    // 调用事件函数
+    this.loadChatData(this.data.categary);
+ 
   },
 
   /**
