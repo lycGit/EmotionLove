@@ -6,7 +6,7 @@ Page({
    */
   data: {
     currentPage: 1,
-    pageSize: 10,
+    pageSize: 20,
     categroy: '',
     all_chats: []
   },
