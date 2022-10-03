@@ -1,6 +1,6 @@
 <view  class="case_row" >
     <view class="case_item" >
-        <image class="case_image" src="/pages/assets/imgs/ic_cat_music.png" />
+        <image class="case_image" src="/pages/assets/imgs/huo.png" />
         <view class="right">
             <view class="case_title" >
                 {{entity.title}}

@@ -7,10 +7,10 @@
                     
                 </view>
                 <view class="alert_image" >
-                    <image class="alert_logo" src="/pages/assets/imgs/ic_cat_music.png" />
+                    <image class="alert_logo" src="/pages/assets/imgs/huo.png" />
                 </view>   
                 <view class="close_btn" bind:tap="hideDialog">
-                    <image class="close_logo" src="/pages/assets/imgs/ic_cat_music.png" />
+                    <image class="close_logo" src="/pages/assets/imgs/huo.png" />
                 </view> 
             </view>
 

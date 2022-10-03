@@ -20,13 +20,13 @@ Component({
   data: {
     skill_item_images: [
       {
-       imageSrc: "/pages/assets/imgs/ic_cat_music.png"
+       imageSrc: "/pages/assets/imgs/huo.png"
       },
       // {
-      //   imageSrc: "/pages/assets/imgs/ic_cat_music.png"
+      //   imageSrc: "/pages/assets/imgs/huo.png"
       // },
       {
-        imageSrc: "/pages/assets/imgs/ic_cat_music.png"
+        imageSrc: "/pages/assets/imgs/huo.png"
       }
     ]
   },

@@ -6,49 +6,74 @@ Page({
    */
   data: {
     all_lesson_cases:[
-      {
-        image:'',
-        title:'因敏感因素暂停板块，可咨询客服获取相关资料',
-        contact:'a13068795632',
-        count: '23',
-        students:'876'
-      },
-      {
-        image:'',
-        title:'因敏感因素暂停板块，可咨询客服获取相关资料',
-        contact:'a13068795632',
-        count: '23',
-        students:'876'
-      },
-      {
-        image:'',
-        title:'因敏感因素暂停板块，可咨询客服获取相关资料',
-        contact:'a13068795632',
-        count: '23',
-        students:'876'
-      },
-      {
-        image:'',
-        title:'因敏感因素暂停板块，可咨询客服获取相关资料',
-        contact:'a13068795632',
-        count: '23',
-        students:'876'
-      },
-      {
-        image:'',
-        title:'因敏感因素暂停板块，可咨询客服获取相关资料',
-        contact:'a13068795632',
-        count: '23',
-        students:'876'
-      }
+      // {
+      //   image:'',
+      //   title:'因敏感因素暂停板块，可咨询客服获取相关资料',
+      //   contact:'a13068795632',
+      //   count: '23',
+      //   students:'876'
+      // },
+      // {
+      //   image:'',
+      //   title:'因敏感因素暂停板块，可咨询客服获取相关资料',
+      //   contact:'a13068795632',
+      //   count: '23',
+      //   students:'876'
+      // },
+      // {
+      //   image:'',
+      //   title:'因敏感因素暂停板块，可咨询客服获取相关资料',
+      //   contact:'a13068795632',
+      //   count: '23',
+      //   students:'876'
+      // },
+      // {
+      //   image:'',
+      //   title:'因敏感因素暂停板块，可咨询客服获取相关资料',
+      //   contact:'a13068795632',
+      //   count: '23',
+      //   students:'876'
+      // },
+      // {
+      //   image:'',
+      //   title:'因敏感因素暂停板块，可咨询客服获取相关资料',
+      //   contact:'a13068795632',
+      //   count: '23',
+      //   students:'876'
+      // }
     ]
   },
+
+  loadLessonData: function(){
+    var that = this;
+     wx.request({
+        url: "https://www.qgsq.space/lesson/lesson",
+        method: 'GET',
+        success: function(res){
+          var topicArr = []
+          for (const index in res.data) {
+             var item = res.data[index];
+             topicArr.push(item);
+          }
+          console.log(topicArr); 
+          
+          that.setData({
+            all_lesson_cases : topicArr
+          });
+     
+        },
+        fail: function(){xe
+          console.log(xe);
+        }
+  
+      })
+ },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     this.loadLessonData()
   },
 
   /**

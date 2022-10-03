@@ -20,7 +20,7 @@
                     
                 </view>
                 <!-- <view class="like">
-                    <image class="bottom_logo" src="/pages/assets/imgs/ic_cat_music.png" />
+                    <image class="bottom_logo" src="/pages/assets/imgs/huo.png" />
                     {{entity.like}}
                 </view> -->
             </view>

@@ -12,7 +12,7 @@
                         {{item.content}}
                     </view>
                     <view class="copy-btn">
-                        <image class="copy_btn_image" src="/pages/assets/imgs/ic_cat_music.png" />
+                        <image class="copy_btn_image" src="/pages/assets/imgs/huo.png" />
                     </view>
                 </view>
                 <view wx:if="{{item.sex == 1 }}" class="row-right" >
@@ -23,7 +23,7 @@
                         {{item.content}}
                     </view>
                     <view class="copy-btn">
-                        <image class="copy_btn_image" src="/pages/assets/imgs/ic_cat_music.png" />
+                        <image class="copy_btn_image" src="/pages/assets/imgs/huo.png" />
                     </view>
                 </view>
             </view>
