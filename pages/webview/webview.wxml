@@ -1,3 +1,7 @@
-<web-view src="https://www.qgsq.space/speakskill/emotions" bindload="bindload" binderror="binderror">
 
-</web-view>
+<web-view src= "{{jump_url}}">
+
+</web-view> 
+
+
+

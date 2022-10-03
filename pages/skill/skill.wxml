@@ -1,6 +1,6 @@
 <view class="container" >
     <view class="items" >
-        <skill-item wx:for="{{all_skill_cases}}" class="row" entity = "{{item}}" bind:tap="showWebView">
+        <skill-item wx:for="{{all_skill_cases}}" class="row" entity = "{{item}}" bind:tap="showWebView" data-entity="{{item}}">
         </skill-item>
     </view>
 

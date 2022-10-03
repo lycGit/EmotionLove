@@ -1,8 +1,10 @@
 // pages/skill/skill.js
 Page({
-  showWebView: function() {
+  showWebView: function(e) {
+    let artid = e.currentTarget.dataset.entity.artid;
+    console.log(artid)
     wx.navigateTo({
-      url: '/pages/webview/webview',
+      url: '/pages/webview/webview?artid=' + artid,
       success: (result)=>{
         
       },
