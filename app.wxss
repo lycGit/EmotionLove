@@ -8,3 +8,10 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }  */
+
+/* {
+  "pagePath": "pages/case/case",
+  "text": "聊天案例",
+  "iconPath": "/pages/assets/imgs/chatcase.png",
+  "selectedIconPath": "/pages/assets/imgs/chatcase.png"
+}, */

@@ -25,12 +25,6 @@
         "selectedIconPath": "/pages/assets/imgs/liaotianhuashu.png"
       },
       {
-        "pagePath": "pages/case/case",
-        "text": "聊天案例",
-        "iconPath": "/pages/assets/imgs/chatcase.png",
-        "selectedIconPath": "/pages/assets/imgs/chatcase.png"
-      },
-      {
         "pagePath": "pages/skill/skill",
         "text": "恋爱技巧",
         "iconPath": "/pages/assets/imgs/qinggandaxue.png",
@@ -61,4 +55,6 @@
   "usingComponents": {
     "contact-alert": "/cmps/contact-alert/contact-alert"
   }
+  
 }
+

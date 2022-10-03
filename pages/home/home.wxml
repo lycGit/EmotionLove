@@ -35,11 +35,7 @@
          </view>
 
     </view> 
-    <view class="emotion_source">
-        <!-- <view wx:for="{{4}}" class="source_item" >
-             <image class="source_logo" src="/pages/assets/imgs/ic_cat_music.png" />
-             展示页面素材
-        </view> -->
+    <view class="emotion_source" style="display:none">
         <view  class="source_item" >
             <image class="source_logo" src="/pages/assets/imgs/yemiansucai.png" />
             展示面素材
@@ -119,7 +115,7 @@
         </view>
         
     </view>
-    <view class="case_bar" >
+    <view class="case_bar" style="display:none">
         <view class="left" >
              <image class="case_logo" src="/pages/assets/imgs/huo2.png" />
               聊天案例   
@@ -129,7 +125,7 @@
         </view>
 
     </view>
-    <view class="all_cases" >
+    <view class="all_cases" style="display:none">
         <case-item  wx:for="{{all_cases}}"
              entity = "{{item}}" bind:tap="showWebView">
         </case-item>
