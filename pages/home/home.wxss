@@ -90,6 +90,12 @@
    margin-left: 15rpx;
    margin-right: 10rpx;
   }
+  .container .search_input{
+    height: 40rpx;
+    margin-left: 15rpx;
+    margin-right: 10rpx;
+   }
+  
 
   .search .search_hint{
       display: flex;

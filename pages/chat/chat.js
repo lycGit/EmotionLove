@@ -50,13 +50,61 @@ Page({
        })
   },
 
+
+  searchChatData: function(word){
+    var that = this;
+     wx.request({
+        url: "https://www.qgsq.space/speakskill/seachchatdetail",
+        data: {
+         'word': word,
+         'pageNO': that.data.currentPage.toString(),
+         'pageSize': that.data.pageSize.toString(),
+          },
+        method: 'POST',
+        header: {
+         "Content-Type": "application/x-www-form-urlencoded"
+       },
+        success: function(res){
+          var topicArr = []
+          for (const index in res.data) {
+             var jsonStr = res.data[index];
+             jsonStr = jsonStr.replace(" ","");
+             if(typeof jsonStr!= 'object'){
+               jsonStr= jsonStr.replace(/\ufeff/g,"");//重点
+               var jsonObj = JSON.parse(jsonStr);
+               topicArr.push(jsonObj);
+             }
+          }
+          console.log(topicArr); 
+          
+          that.setData({
+           all_chats : that.data.all_chats.concat(topicArr) 
+          });
+     
+        },
+        fail: function(){xe
+          console.log(xe);
+        }
+  
+      })
+ },
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.categroy)
-    this.data.categary = options.categroy
-    this.loadChatData(options.categroy)
+    if(Object.keys(options.categroy).length >0) {
+      console.log(options.categroy)
+      this.data.categary = options.categroy
+      this.loadChatData(options.categroy)
+    }
+    if(Object.keys(options.word).length >0) {
+      console.log(options.word)
+      this.searchChatData(options.word)
+    }
+
     // this.setData({
     //   categroy : options.categroy
 

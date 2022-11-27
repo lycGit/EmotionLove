@@ -19,9 +19,9 @@
          <view class="search-wrapper" >
              <view class="search_word" hover-class="none" hover-stop-propagation="false">
                    <image class="search-logo" src="/pages/assets/imgs/ic_search.png" />
-                    输入TA说的话    
+                   <input class="search_input" bindinput="bindKeyInput" placeholder="输入TA说的关键词" auto-focus/>
              </view>
-             <view class="search_btn" bindtap="searchChatSkill" >
+             <view class="search_btn" bindtap="searchChatView" >
                    查找
              </view>
          </view>

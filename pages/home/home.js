@@ -12,6 +12,26 @@ Page({
         complete: ()=>{}
       });
     },
+
+    searchChatView: function() {
+      console.log(this.data.inputValue)
+      wx.navigateTo({
+        url: '/pages/chat/chat?word=' + this.data.inputValue,
+        success: (result)=>{
+          
+        },
+        fail: ()=>{},
+        complete: ()=>{}
+      });
+    },
+
+    bindKeyInput:function(e){
+      this.setData({
+         inputValue:e.detail.value
+      })
+   },
+
+
     showWebView: function() {
       wx.navigateTo({
         url: '/pages/webview/webview',
@@ -22,7 +42,7 @@ Page({
         complete: ()=>{}
       });
     },
-    searchChatSkill: function(){
+    loadChatSkill: function(){
       var that = this;
       wx.request({
          url: "https://www.qgsq.space/speakskill/talkskill",
@@ -57,6 +77,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+       inputValue: '',
        all_search_topics: [
          '要照片','拒绝好人卡','寻找话题','哄女生','表情话术','土味情话','异地恋'
        ],
@@ -116,7 +137,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.searchChatSkill();
+      this.loadChatSkill();
   },
 
 
