@@ -99,8 +99,7 @@ Page({
       console.log(options.categroy)
       this.data.categary = options.categroy
       this.loadChatData(options.categroy)
-    }
-    if(Object.keys(options.word).length >0) {
+    }else if(Object.keys(options.word).length >0) {
       console.log(options.word)
       this.searchChatData(options.word)
     }
