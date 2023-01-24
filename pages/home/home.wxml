@@ -21,7 +21,7 @@
                    <image class="search-logo" src="/pages/assets/imgs/ic_search.png" />
                    <input class="search_input" bindinput="bindKeyInput" placeholder="输入TA说的关键词" auto-focus/>
              </view>
-             <view class="search_btn" bindtap="searchChatView" >
+             <view class="search_btn" bindtap="searchWordView" >
                    查找
              </view>
          </view>
@@ -65,8 +65,8 @@
         </view>
     </view>
     <view class="search_always" > 
-            <view wx:for="{{all_search_topics}}"  >
-                <view class="search_item" >
+            <view wx:for="{{all_search_topics}}" >
+                <view class="search_item"  bind:tap="searchChatView" data-word="{{item}}" >
                     <image class="search_item_logo" src="/pages/assets/imgs/huo.png" />
                     {{item}}
                 </view>

@@ -13,10 +13,23 @@ Page({
       });
     },
 
-    searchChatView: function() {
-      console.log(this.data.inputValue)
+    searchChatView: function(e) {
+      // console.log(e.currentTarget.dataset.word);
+      let word = e.currentTarget.dataset.word;
       wx.navigateTo({
-        url: '/pages/chat/chat?word=' + this.data.inputValue,
+        url: '/pages/chat/chat?word=' + word,
+        success: (result)=>{
+          
+        },
+        fail: ()=>{},
+        complete: ()=>{}
+      });
+    },
+
+    searchWordView: function() {
+      var that = this;
+      wx.navigateTo({
+        url: '/pages/chat/chat?word=' + that.data.inputValue,
         success: (result)=>{
           
         },

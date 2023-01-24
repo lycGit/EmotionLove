@@ -25,6 +25,7 @@ Page({
           "Content-Type": "application/x-www-form-urlencoded"
         },
          success: function(res){
+          console.log(res); 
            var topicArr = []
            for (const index in res.data) {
               var jsonStr = res.data[index];
@@ -54,22 +55,23 @@ Page({
   searchChatData: function(word){
     var that = this;
      wx.request({
-        url: "https://www.qgsq.space/speakskill/seachchatdetail",
-        data: {
-         'word': word,
-         'pageNO': that.data.currentPage.toString(),
-         'pageSize': that.data.pageSize.toString(),
-          },
-        method: 'POST',
-        header: {
-         "Content-Type": "application/x-www-form-urlencoded"
-       },
+      url: "https://www.qgsq.space/speakskill/search",
+      data: {
+        'word': word
+      },
+      method: 'GET',
+      header: {'Content-Type': 'application/json'},
+
         success: function(res){
+          console.log(res); 
           var topicArr = []
-          for (const index in res.data) {
-             var jsonStr = res.data[index];
+          // console.log(res.data.hits.hits); 
+          for (const index in res.data.hits.hits) {
+             let tmp = res.data.hits.hits[index];
+             var jsonStr = tmp._source.content;
+             console.log(jsonStr); 
              jsonStr = jsonStr.replace(" ","");
-             if(typeof jsonStr!= 'object'){
+             if(typeof jsonStr != 'object'){
                jsonStr= jsonStr.replace(/\ufeff/g,"");//重点
                var jsonObj = JSON.parse(jsonStr);
                topicArr.push(jsonObj);
@@ -95,19 +97,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(Object.keys(options.categroy).length >0) {
+    if(options.categroy != null && Object.keys(options.categroy).length > 0) {
       console.log(options.categroy)
       this.data.categary = options.categroy
       this.loadChatData(options.categroy)
-    }else if(Object.keys(options.word).length >0) {
+      return
+    }
+    if(options.word != null && Object.keys(options.word).length >0) {
       console.log(options.word)
       this.searchChatData(options.word)
+      return
     }
 
-    // this.setData({
-    //   categroy : options.categroy
-
-    // })
   },
 
   /**
