@@ -1,6 +1,9 @@
 // pages/skill/skill.js
 Page({
   showWebView: function(e) {
+    if (getApp().needBuyVIP()) {
+      return  
+    }
     let artid = e.currentTarget.dataset.entity.artid;
     console.log(artid)
     wx.navigateTo({

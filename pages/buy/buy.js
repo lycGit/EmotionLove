@@ -1,41 +1,121 @@
 // pages/buy/buy.js
 Page({
+  buyVIP: function(e) {
+    let price = e.currentTarget.dataset.price;
+    wx.login({
+      //成功放回
+      success:(res)=>{
+        console.log(res);
+        let code=res.code
 
+        wx.request({
+          url: "https://www.qgsq.space/getopenid",
+          data: {'code': code},
+          method: 'GET',
+          header: {'Content-Type': 'application/json'},
+          success: function(res){
+            console.log('login success');
+            console.log(res);
+            // openid = res.data['openid']
+            console.log(res.data['openid']);
+            console.log(price)
+            wx.request({
+              
+              url: "https://www.qgsq.space/pay/create",
+              data: {'openid': res.data['openid'],'REMOTE_ADDR': '127.0.0.1','price': price},
+              method: 'GET',
+              header: {'Content-Type': 'application/json'},
+              success: function(res){
+                console.log('start pay success');
+                console.log(res);
+                
+                  wx.requestPayment(
+                    {
+                    "timeStamp":res.data.data.timeStamp,
+                    "nonceStr": res.data.data.nonceStr,
+                    "package": res.data.data.package,
+                    "signType": res.data.data.signType,
+                    "paySign": res.data.data.paySign,
+                    "success":function(res){
+                      console.log('pay success');
+                      wx.setStorageSync("xinyuanhaspay", "1");
+                    },
+                    "fail":function(res){
+                      console.log('pay failed');
+                    },
+                    "complete":function(res){}
+                    })
+                    
+                
+              },
+              fail: function(){xe
+                console.log(xe);
+              }
+
+            })
+
+
+          },
+          fail: function(){xe
+            console.log(xe);
+          }
+        })
+
+      }
+    })
+  },
+  loadPriceData: function(){
+    var that = this;
+     wx.request({
+        url: "https://www.qgsq.space/my/pricelist",
+        data: {},
+        method: 'GET',
+        header: {'Content-Type': 'application/json'},
+        success: function(res){
+          console.log(res.data); 
+          that.setData({
+            pricesArray : res.data
+          });
+     
+        },
+        fail: function(){xe
+          console.log(xe);
+        }
+  
+      })
+  },
+  loadScrollerList: function(){
+    var that = this;
+     wx.request({
+        url: "https://www.qgsq.space/my/scollerlist",
+        data: {},
+        method: 'GET',
+        header: {'Content-Type': 'application/json'},
+        success: function(res){
+          console.log(res.data); 
+          that.setData({
+            textArray : res.data
+          });
+     
+        },
+        fail: function(){xe
+          console.log(xe);
+        }
+  
+      })
+  },
   /**
    * 页面的初始数据
    */
   data: {
     pricesArray:[
-      {
-        name:'月卡会员',
-        price:'38.8元',
-        oldprice:'58.8元'
-      },
-      {
-        name:'年卡会员',
-        price:'98.8元',
-        oldprice:'298.8元'
-      },
-      {
-        name:'终身会员',
-        price:'188.8元',
-        oldprice:'488.8元'
-      }
     ],
-    text: "需要滚动的字幕",
+    text: "",
     textArray: [
-      'aaa',
-      'bbb',
-      'ccc',
-      'ddd',
-      'eee',
-      'fff',
-      'ggg',
-      'hhh',
     ],
     step: 1, // 滚动速度
     distance: 40, // 初始滚动距离
-    space: 300,
+    space: 400,
     interval: 20 // 时间间隔
   },
   onShow: function() {
@@ -80,6 +160,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.loadPriceData()
+    this.loadScrollerList()
 
   },
 

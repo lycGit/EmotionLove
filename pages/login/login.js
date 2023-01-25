@@ -1,15 +1,25 @@
 // pages/login/login.js
 Page({
-  // login: function() {
-  //   wx.navigateTo({
-  //     url: '/pages/buy/buy',
-  //     success: (result)=>{
+  paymoney: function() {
+    wx.navigateTo({
+      url: '/pages/buy/buy',
+      success: (result)=>{
         
-  //     },
-  //     fail: ()=>{},
-  //     complete: ()=>{}
-  //   });
-  // },
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
+  clickprivacy: function() {
+    wx.navigateTo({
+      url: '/pages/webview/webview?artid=' + 'a001',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
 
   login: function() {
     wx.login({
@@ -50,8 +60,6 @@ Page({
                     "complete":function(res){}
                     })
                     
-                    
-
                 
               },
               fail: function(){xe
@@ -111,24 +119,49 @@ Page({
 
   },
 
+  loadProfileList: function(){
+    var that = this;
+     wx.request({
+        url: "https://www.qgsq.space/my/profilelist",
+        data: {},
+        method: 'GET',
+        header: {'Content-Type': 'application/json'},
+        success: function(res){
+          console.log(res.data); 
+          that.setData({
+            items : res.data
+          });
+     
+        },
+        fail: function(){xe
+          console.log(xe);
+        }
+  
+      })
+  },
+
   data: {
     items:[
-      {
-        icon: 'tianxiejihuoma.png',
-        title: '激活码解锁',
-        discribe: '微信号码：123455'
-      },
-      {
-        icon: 'aichat.png',
-        title: '投诉建议',
-        discribe: '微信号码：123455'
-      },
-      {
-        icon: 'lianxikefu.png',
-        title: '联系客服',
-        discribe: '微信号码：123455'
-      }
+      // {
+      //   icon: 'tianxiejihuoma.png',
+      //   title: '激活码解锁',
+      //   discribe: '微信号码：123455'
+      // },
+      // {
+      //   icon: 'aichat.png',
+      //   title: '投诉建议',
+      //   discribe: '微信号码：123455'
+      // },
+      // {
+      //   icon: 'lianxikefu.png',
+      //   title: '联系客服',
+      //   discribe: '微信号码：123455'
+      // }
     ]
+  },
+
+  onLoad: function (options) {
+    this.loadProfileList()
   },
  
 })

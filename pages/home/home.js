@@ -1,7 +1,11 @@
 // pages/home/home.js
 Page({
    showChatView: function(e) {
-      // console.log(e.currentTarget.dataset.category)
+    if (getApp().needBuyVIP()) {
+      return  
+    }
+       
+    // console.log(e.currentTarget.dataset.category)
       let categroy = e.currentTarget.dataset.category;
       wx.navigateTo({
         url: '/pages/chat/chat?categroy=' + categroy,
@@ -14,6 +18,9 @@ Page({
     },
 
     searchChatView: function(e) {
+      if (getApp().needBuyVIP()) {
+        return  
+      }
       // console.log(e.currentTarget.dataset.word);
       let word = e.currentTarget.dataset.word;
       wx.navigateTo({
@@ -27,6 +34,9 @@ Page({
     },
 
     searchWordView: function() {
+      if (getApp().needBuyVIP()) {
+        return  
+      }
       var that = this;
       wx.navigateTo({
         url: '/pages/chat/chat?word=' + that.data.inputValue,

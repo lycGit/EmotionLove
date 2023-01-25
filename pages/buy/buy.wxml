@@ -19,10 +19,10 @@
             VIP套餐
     </view>
     <view class="hint" >
-            一杯咖啡钱，换来一堆女朋友！！！ 赶快加微信“”购买激活码吧。
+            一杯奶茶钱，换来一堆女朋友！！！ 赶快动手购买激活码吧。
     </view>
     <view class="blow" >
-         <buy-item wx:for="{{pricesArray}}" class="row" entity = "{{item}}">
+         <buy-item wx:for="{{pricesArray}}" class="row" entity = "{{item}}" bind:tap="buyVIP" data-price="{{item.price}}">
         </buy-item>
     </view>
 

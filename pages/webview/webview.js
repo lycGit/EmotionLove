@@ -13,9 +13,16 @@ Page({
    */
   onLoad: function (options) {
    let artid = options.artid
+   if (artid == 'a001') {
     this.setData({
-       jump_url : 'https://www.qgsq.space/loveskill/skillhtmldetail?artid=' + artid
-     });
+      jump_url : 'https://www.qgsq.space/source/privacy.html'
+    });
+   }else{
+    this.setData({
+      jump_url : 'https://www.qgsq.space/loveskill/skillhtmldetail?artid=' + artid
+    });
+   }
+
   },
 
   /**

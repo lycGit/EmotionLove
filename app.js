@@ -15,6 +15,25 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+
+
+  needBuyVIP: function(){
+   var flag = wx.getStorageSync("xinyuanhaspay")
+   if (flag == "1") {
+    return false
+   }else{
+    wx.navigateTo({
+      url: '/pages/buy/buy',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+    return true
+   }
+
   }
 
 })

@@ -3,7 +3,7 @@
     <view class="above" >
         <view class="header" >
             <image class="logo" src="/pages/assets/imgs/header.png" />
-            <view class="wechat-login" bind:tap="login">
+            <view class="wechat-login" bind:tap="paymoney">
                 <!-- 登录/注册 -->
                 购买激活码
             </view>
@@ -36,7 +36,7 @@
     <view class="below" >
         <view class="agreement">
             <!-- 登录表示同意 -->
-            <view class="secret" >隐私协议</view> 
+            <view class="secret" bind:tap="clickprivacy">隐私协议</view> 
         </view>  
     </view>
 
