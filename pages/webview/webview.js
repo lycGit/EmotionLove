@@ -13,9 +13,10 @@ Page({
    */
   onLoad: function (options) {
    let artid = options.artid
+   console.log(artid)
    if (artid == 'a001') {
     this.setData({
-      jump_url : 'https://www.qgsq.space/source/privacy.html'
+      jump_url : 'https://www.qgsq.space/privacy.html'
     });
    }else{
     this.setData({
