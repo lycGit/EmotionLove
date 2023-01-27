@@ -141,6 +141,7 @@ Page({
   },
 
   data: {
+    buytitle:'购买激活码',
     items:[
       // {
       //   icon: 'tianxiejihuoma.png',
@@ -162,6 +163,26 @@ Page({
 
   onLoad: function (options) {
     this.loadProfileList()
+
   },
+  onShow: function () {
+    var flag = wx.getStorageSync("xinyuanhaspay")
+    if (flag == "1") {
+      this.setData({
+        buytitle:'已激活',
+      });
+    }
+  },
+   /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
+      return {
+        title: '购买激活码',
+        path: 'pages/login/login',
+        imageUrl: '/pages/assets/imgs/tuodanshenqi.png'//自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径。支持PNG及JPG。显示图片长宽比是 5:4。
+      }
+  
+    }
  
 })

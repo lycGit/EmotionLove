@@ -5,7 +5,7 @@
             <image class="logo" src="/pages/assets/imgs/header.png" />
             <view class="wechat-login" bind:tap="paymoney">
                 <!-- 登录/注册 -->
-                购买激活码
+                {{buytitle}}
             </view>
         </view>
         <view class="notice" >

@@ -162,7 +162,17 @@ Page({
   onLoad: function (options) {
       this.loadChatSkill();
   },
+ /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '聊天话术',
+      path: 'pages/home/home',
+      imageUrl: '/pages/assets/imgs/tuodanshenqi.png'//自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径。支持PNG及JPG。显示图片长宽比是 5:4。
+    }
 
+  }
 
 
 })
