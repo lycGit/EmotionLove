@@ -10,20 +10,20 @@ Page({
    */
   data: {
     all_lesson_cases:[
-      // {
-      //   image:'',
-      //   title:'因敏感因素暂停板块，可咨询客服获取相关资料',
-      //   contact:'a13068795632',
-      //   count: '23',
-      //   students:'876'
-      // },
-      // {
-      //   image:'',
-      //   title:'因敏感因素暂停板块，可咨询客服获取相关资料',
-      //   contact:'a13068795632',
-      //   count: '23',
-      //   students:'876'
-      // },
+      {
+        image:'',
+        title:'本栏目会员方可查看，可加客服微信获取权限',
+        contact:'a13068795632',
+        count: '43',
+        students:'579'
+      },
+      {
+        image:'',
+        title:'本栏目会员方可查看，可加客服微信获取权限',
+        contact:'a13068795632',
+        count: '23',
+        students:'876'
+      },
       // {
       //   image:'',
       //   title:'因敏感因素暂停板块，可咨询客服获取相关资料',
@@ -49,6 +49,9 @@ Page({
   },
 
   loadLessonData: function(){
+    if (getApp().freeVersion == getApp().currentVersion()) {
+      return
+    }
     var that = this;
      wx.request({
         url: "https://www.qgsq.space/lesson/lesson",

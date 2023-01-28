@@ -22,18 +22,40 @@ Page({
     currentPage: 1,
     pageSize: 20,
     all_skill_cases: [
-      // {
-      //   title: "怎么和女生聊天才能让她们觉得不烦？怎么和女生聊天才能让她们觉得不烦？",
-      //   images:[
+      {
+        title: "因合规原因，暂不对外开放，请加客服微信获取相关资料",
+        images:[
 
-      //   ],
-      //   date: "2021-09-23",
-      //   like: "9087"
-      // }
+        ],
+        date: "2021-09-23",
+        like: "9087"
+      },
+      {
+        title: "因合规原因，暂不对外开放，请加客服微信获取相关资料",
+        images:[
+
+        ],
+        date: "2021-09-23",
+        like: "9087"
+      },
+      {
+        title: "因合规原因，暂不对外开放，请加客服微信获取相关资料",
+        images:[
+
+        ],
+        date: "2021-09-23",
+        like: "9087"
+      }
     ]
   },
 
   loadLoveSkillData: function(){
+    if (getApp().freeVersion == getApp().currentVersion()) {
+      return
+    }
+    if (this.data.currentPage == 1) {
+      this.data.all_skill_cases = []
+    }
     var that = this;
      wx.request({
         url: "https://www.qgsq.space/loveskill/loveskill",
