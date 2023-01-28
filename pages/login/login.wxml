@@ -3,13 +3,13 @@
     <view class="above" >
         <view class="header" >
             <image class="logo" src="/pages/assets/imgs/header.png" />
-            <view class="wechat-login" bind:tap="paymoney">
+            <view class="wechat-login" bind:tap="paymoney" hidden="{{isHidden}}">
                 <!-- 登录/注册 -->
                 {{buytitle}}
             </view>
         </view>
-        <view class="notice" >
-           <image class="notice_logo" src="/pages/assets/imgs/topic_logo.jpeg" />
+        <view class="notice"  style="display:none">
+           <image class="notice_logo" src="/pages/assets/imgs/topic_logo.jpeg"/>
             点击•●•添加到我的小程序，下次使用更方便
         </view>
         <view  wx:for="{{ items}}"  class="item-for" >

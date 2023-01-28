@@ -12,28 +12,60 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
+    this.validVersion()
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    freeVersion: ""
   },
 
+  validVersion: function(){
+    var that = this;
+    wx.request({
+       url: "https://www.qgsq.space/my/validversion",
+       data: {'version': '2'},
+       method: 'GET',
+       header: {'Content-Type': 'application/json'},
+       success: function(res){
+           console.log(res.data); 
+           that.freeVersion = res.data
+
+       },
+       fail: function(){xe
+         console.log(xe);
+       }
+ 
+     })
+  },
+
+  currentVersion: function(){
+    return "1.0.4"
+  },
 
   needBuyVIP: function(){
+    // wx.setStorageSync("xinyuanhaspay", "0");
    var flag = wx.getStorageSync("xinyuanhaspay")
-   if (flag == "1") {
+   if (flag == "1" ) {
     return false
    }else{
-    wx.navigateTo({
-      url: '/pages/buy/buy',
-      success: (result)=>{
-        
-      },
-      fail: ()=>{},
-      complete: ()=>{}
-    });
-    return true
+    if (this.freeVersion != this.currentVersion()) {
+      wx.navigateTo({
+        url: '/pages/buy/buy',
+        success: (result)=>{
+          
+        },
+        fail: ()=>{},
+        complete: ()=>{}
+      });
+      return true
+    }else{
+      return false 
+    }
+
    }
 
   }
+
+
 
 })

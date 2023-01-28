@@ -78,7 +78,7 @@ Page({
           });
      
         },
-        fail: function(){xe
+        fail: function(){
           console.log(xe);
         }
   

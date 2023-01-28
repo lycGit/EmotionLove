@@ -120,6 +120,10 @@ Page({
   },
 
   loadProfileList: function(){
+    var hideState = false
+    if (getApp().freeVersion == getApp().currentVersion()) {
+      hideState = true
+    }
     var that = this;
      wx.request({
         url: "https://www.qgsq.space/my/profilelist",
@@ -129,7 +133,8 @@ Page({
         success: function(res){
           console.log(res.data); 
           that.setData({
-            items : res.data
+            items : res.data,
+            isHidden: hideState
           });
      
         },
@@ -141,6 +146,7 @@ Page({
   },
 
   data: {
+    isHidden:false,
     buytitle:'购买激活码',
     items:[
       // {
